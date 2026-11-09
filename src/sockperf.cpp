@@ -3808,7 +3808,15 @@ void do_test() {
 }
 
 //------------------------------------------------------------------------------
+#ifdef __linux__
+#include "continuous.h"
+#endif
+
 int main(int argc, char *argv[]) {
+#ifdef __linux__
+    if (argc > 1 && strcmp(argv[1], "continuous") == 0)
+        return continuous::run(argc, argv);
+#endif
     try {
         int rc = SOCKPERF_ERR_NONE;
 

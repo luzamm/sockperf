@@ -16,6 +16,7 @@ AM_CXXFLAGS = $(OUR_CXXFLAGS)
 bin_PROGRAMS = sockperf
 
 sockperf_SOURCES = \
+    src/continuous.h \
 	src/aopt.cpp \
 	src/aopt.h \
 	src/client.cpp \
